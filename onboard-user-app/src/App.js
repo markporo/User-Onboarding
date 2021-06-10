@@ -16,7 +16,7 @@ function App() {
     axios
       .get(API_URL)
       .then(res => {
-        const userFromApi = res.data
+        const userFromApi = res.data.data
         setUserToUsers(userFromApi)
       })
       .catch(err => console.log(err))
@@ -28,14 +28,15 @@ function App() {
     <div className="App">
       <Form API_URL={API_URL} formValues={formValues} setFormValues={setFormValues} users={users} setUserToUsers={setUserToUsers} />
       <h3>Current Club List:</h3>
+      {console.log(users, "users state returned by app")}
       {/* <User userinfo={users[0]} /> */}
-      {/* {
+      {
         users.map(user => {
           return (
             <User userinfo={user} />
           )
         })
-      } */}
+      }
     </div>
   );
 }
