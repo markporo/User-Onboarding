@@ -1,10 +1,10 @@
 import * as yup from 'yup'
 
 const schema = yup.object().shape({
-    name: yup.string().required("Please Enter Your Name."),
-    email: yup.string().email().required("Please Enter Your Email."),
-    password: yup.string().required("Passwords must be at least 8 characters and contain a special character."),
-    terms: yup.boolean(true).required('You must accept the terms to continue.'),
+    name: yup.string("Please Enter Your Name.").required(),
+    email: yup.string("Please Enter Your Email.").email().required(),
+    password: yup.string().min(8).required(),
+    terms: yup.boolean().required(),
 })
 
 export default schema;

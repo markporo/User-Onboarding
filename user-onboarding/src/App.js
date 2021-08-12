@@ -21,7 +21,7 @@ const initialFormErrors = {
 
 function App() {
   // state
-  const [users, setUsers] = useState([{ name: 'Jeff', email: 'jeff@jeff.com', password: 'sweet', terms: true }]);
+  const [users, setUsers] = useState([{ name: 'Jeff', email: 'jeff@jeff.com', password: 'sweet', terms: false }]);
   const [formValues, setFormValues] = useState(defaultFormValues);
   const [formErrors, setFormErrors] = useState(initialFormErrors);
   const [disabled, setDisabled] = useState(true);
@@ -105,6 +105,13 @@ function App() {
           })
         }
       </ul>
+      {<div>
+        <div>{formErrors.name}</div>
+        <div>{formErrors.email}</div>
+        <div id='pwErrors'>{formErrors.password}</div>
+        <div>{formErrors.terms}</div>
+      </div>
+      }
       <Form formValues={formValues} onChange={onChange} onSubmit={onSubmit} formErrors={formErrors} disabled={disabled} />
     </div>
   );

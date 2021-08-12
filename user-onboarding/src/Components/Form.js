@@ -21,7 +21,7 @@ export default function Form({ formValues, onChange, onSubmit, disabled }) {
 
 
     return (<div>
-        <StyledForm onSubmit={onSubmit}>
+        <StyledForm id="userForm" onSubmit={onSubmit}>
             <Label>Name:
                 <Input
                     value={formValues.name}
@@ -55,7 +55,7 @@ export default function Form({ formValues, onChange, onSubmit, disabled }) {
                     checked={formValues.terms}
                 />
             </Label>
-            <button disabled={disabled}>Submit</button>
+            <button name='submit' disabled={disabled}>Submit</button>
         </StyledForm>
     </div>)
 }
